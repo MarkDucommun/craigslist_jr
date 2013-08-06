@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Craigslist Jr.</h1>
+  <button><a href="/create">Create Post</a></button>
+  <ul>
+  <% @categories.each do |category| %>
+  <li><%= category.name %></li>
+  <% end %>
+  </ul>
+</div>

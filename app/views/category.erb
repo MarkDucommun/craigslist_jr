@@ -1,0 +1,12 @@
+<div class="container">
+  <h2><%= @category.name %></h2>
+
+  <ul>
+    <% @category.posts.each do |post| %>
+    <li><%= post.title %> - <span><%= post.price %></span></li>
+    <% end %>
+  </ul>
+
+</div>
+
+<a href="/">Homepage</a>

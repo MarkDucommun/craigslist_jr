@@ -1,0 +1,6 @@
+<h2><%= @post.title %> <span><%= @post.price %></span></h2>
+<p><%= @post.description %></p>
+<p>Contact for more information: <%= @post.email %></p>
+
+<a href="/category/<% @post.category.id %>"><%= @post.category %></a>
+<a href="/">Homepage</a>
