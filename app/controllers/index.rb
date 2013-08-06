@@ -14,7 +14,7 @@ get '/create/:url/edit' do
 end
 
 get '/category/:id' do
-
+  @category = Category.find(params[:id])
   erb :category
 end
 
@@ -33,12 +33,13 @@ end
 
 post '/create' do
   category = Category.find_or_create_by_name(params[:post][:category])
-  # puts 'putting category' 
-  # puts category.name
+  puts 'putting category' 
+  puts params[:post][:title]
   @post = category.posts.build(title: params[:post][:title],
                                email: params[:post][:email],
                                description: params[:post][:description],
                                price: params[:post][:price])
+  @post.title
   # @post.key = KeyGen.create_key
   @post.create_url
 
