@@ -30,9 +30,8 @@ post '/create' do
   category = Category.find_or_create_by_name(params[:post][:category])
   @post = category.build_post(params[:post])
 
-  @post = Post.new(params[:post])
   # @post.key = KeyGen.create_key
-  @post.create_key
+  @post.create_url
 
   @post.save
   
