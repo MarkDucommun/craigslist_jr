@@ -4,11 +4,11 @@ get '/' do
 end
 
 get '/create' do
-
+  @categories = Category.all
   erb :create
 end
 
-get '/create/:url/edit' do
+get '/:url/edit' do
   @post = Post.find_by_url(params[:url])
   erb :create
 end
@@ -23,8 +23,8 @@ get '/post/:url/edit' do
   erb :create
 end
 
-get '/post/:id' do
-
+get '/post/:url' do
+  @post = Post.find_by_url(params[:url])
   erb :post
 end
 
@@ -39,7 +39,6 @@ post '/create' do
                                email: params[:post][:email],
                                description: params[:post][:description],
                                price: params[:post][:price])
-  @post.title
   # @post.key = KeyGen.create_key
   @post.create_url
 

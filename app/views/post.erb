@@ -1,6 +1,13 @@
-<h2><%= @post.title %> <span><%= @post.price %></span></h2>
-<p><%= @post.description %></p>
-<p>Contact for more information: <%= @post.email %></p>
+<div class="container">
+  <nav>
+    <ul>
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/create">Create Post</a></li>
+      <li><a href="/category/<%= @post.category.id %>"><%= @post.category.name %></a></li>
+    <ul>
+  </nav>
 
-<a href="/category/<% @post.category.id %>"><%= @post.category %></a>
-<a href="/">Homepage</a>
+  <h2><%= @post.title %> <span><%= @post.price %></span></h2>
+  <p><%= @post.description %></p>
+  <p><%= @post.email %></p>
+</div>

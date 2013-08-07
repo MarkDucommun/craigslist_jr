@@ -1,12 +1,18 @@
 <div class="container">
-  <h2><%= @category.name %></h2>
+  <nav>
+    <ul>
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/create">Create Post</a></li>
+    <ul>
+  </nav>
 
+  <h2><%= @category.name %></h2>
+  
   <ul>
     <% @category.posts.each do |post| %>
-    <li><%= post.title %> <span><%= post.price %></span></li>
+    <li><a href="/post/<%= post.url %>"><%= post.title %> <span><%= post.price %></span></a></li>
     <% end %>
   </ul>
 
 </div>
 
-<a href="/">Homepage</a>
