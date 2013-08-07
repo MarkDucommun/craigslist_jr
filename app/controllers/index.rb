@@ -8,11 +8,6 @@ get '/create' do
   erb :create
 end
 
-get '/:url/edit' do
-  @post = Post.find_by_url(params[:url])
-  erb :create
-end
-
 get '/category/:id' do
   @category = Category.find(params[:id])
   erb :category
@@ -23,8 +18,8 @@ get '/post/:url/edit' do
   erb :create
 end
 
-get '/post/:url' do
-  @post = Post.find_by_url(params[:url])
+get '/post/:id' do
+  @post = Post.find(params[:id])
   erb :post
 end
 
@@ -39,17 +34,16 @@ post '/create' do
                                email: params[:post][:email],
                                description: params[:post][:description],
                                price: params[:post][:price])
-  # @post.key = KeyGen.create_key
   @post.create_url
 
   @post.save
   
-  redirect "/create/#{@post.url}/edit"
+  redirect "/post/#{@post.url}/edit"
 end
 
 post '/post/:url/edit' do
   @post = Post.find_by_url(params[:url])
   @post.update_attributes(params[:post])
   puts @post.url
-  redirect "/post/#{@post.url}/edit"
+  redirect "/post/#{@post.id}"
 end

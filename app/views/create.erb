@@ -3,11 +3,14 @@
     <ul>
       <li><a href="/">Homepage</a></li>
       <li><a href="/create">Create Post</a></li>
-    <ul>
+    </ul>
   </nav>
+
+  <% if @post; %><h2>Edit a post</h2><% end %>
+  <% unless @post; %><h2>Create a post</h2><% end %>
   
   <% if @post %> 
-    <h2>Edit a post</h2>
+    <h4>/post/<%= @post.url %>/edit - to edit</h4>
     <form action="/post/<%= @post.url %>/edit" method="post">
       <input type="text" name="post[email]" value="<%= @post.email %>">
       <input type="text" name="post[title]" value="<%= @post.title %>">
@@ -17,7 +20,6 @@
     </form>
 
   <% else %>
-    <h2>Create a post</h2>
     <form action="/create" method="post">
       <input type="text" name="post[email]" placeholder="Email">
       <input type="text" name="post[title]" placeholder="Title">

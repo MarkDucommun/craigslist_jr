@@ -4,10 +4,9 @@ a {
 
 a:hover {
   background-color: #ecf0f1;
-  border: 1px solid #95a5a6;
-  padding: 3px;
-  border-left: none;
-  border-right: none;
+  border-bottom: 1px solid #95a5a6;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .container {
@@ -23,8 +22,15 @@ input {
   width: 500px;
 }
 
+textarea {
+  margin: 7px;
+  display: block;
+  width: 500px;
+}
+
 h2 {
   margin: 5px;
+  color: blue;
 }
 
 ul {
@@ -51,7 +57,7 @@ nav {
 }
 
 nav ul {
-
+  
 }
 
 nav ul li {
@@ -61,4 +67,9 @@ nav ul li {
 nav ul li a:hover {
   padding-left: 0;
   padding-right: 0;
+}
+
+nav input {
+  display: inline;
+  width: 200px;
 }

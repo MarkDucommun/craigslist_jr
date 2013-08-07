@@ -10,7 +10,7 @@
   
   <ul>
     <% @category.posts.each do |post| %>
-    <li><a href="/post/<%= post.url %>"><%= post.title %> <span><%= post.price %></span></a></li>
+    <li><a href="/post/<%= post.id %>"><%= post.title %> <span><%= post.price %></span></a></li>
     <% end %>
   </ul>
 

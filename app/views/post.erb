@@ -4,10 +4,11 @@
       <li><a href="/">Homepage</a></li>
       <li><a href="/create">Create Post</a></li>
       <li><a href="/category/<%= @post.category.id %>"><%= @post.category.name %></a></li>
-    <ul>
+    </ul>
   </nav>
-
+  
   <h2><%= @post.title %> <span><%= @post.price %></span></h2>
+
   <p><%= @post.description %></p>
   <p><%= @post.email %></p>
 </div>
