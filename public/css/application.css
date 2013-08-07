@@ -81,7 +81,7 @@ a {
 }
 a:hover,
 a:focus {
-    text-decoration: underline;
+  color: white;
 }
 
 /* LAYOUT CSS */
