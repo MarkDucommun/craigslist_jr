@@ -1,24 +1,29 @@
 <div class="container">
-  <nav>
-    <ul>
-      <li><a href="/">Homepage</a></li>
-      <li><a href="/create">Create Post</a></li>
-    <ul>
-  </nav>
+  <div class="pure-u" id="menu">
+    <div class="pure-menu pure-menu-open">
+        <a class="pure-menu-heading" href="/">List Jr.</a>
+
+        <ul>
+            <li class=" ">
+                <a href="/create">Create Post</a>
+            </li>
+        </ul>
+    </div>
+</div>
   
   <% if @post %> 
     <h2>Edit a post</h2>
-    <form action="/post/<%= @post.url %>/edit" method="post">
+    <form class="pure-class" action="/post/<%= @post.url %>/edit" method="post">
       <input type="text" name="post[email]" value="<%= @post.email %>">
       <input type="text" name="post[title]" value="<%= @post.title %>">
       <textarea name="post[description]" value=""><%= @post.description %></textarea>
       <input type="text" name="post[price]" value="<%= @post.price %>">
-      <input type="submit" value="Submit">
+      <button type="submit" class="pure-button pure-button-primary" value="Submit">
     </form>
 
   <% else %>
     <h2>Create a post</h2>
-    <form action="/create" method="post">
+    <form class="pure-class" action="/create" method="post">
       <input type="text" name="post[email]" placeholder="Email">
       <input type="text" name="post[title]" placeholder="Title">
       <textarea name="post[description]" placeholder="Description"></textarea>
